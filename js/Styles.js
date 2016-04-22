@@ -19,6 +19,60 @@ var Styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'white',
     },
+    row: {
+        flex: 1,
+        alignItems: 'center',
+        backgroundColor: 'white',
+        flexDirection: 'row',
+        padding: 12,
+    },
+    cellBorder: {
+        backgroundColor: 'rgba(0, 0, 0, 0.1)',
+        // Trick to get the thinest line the device can display
+        height: 1 / PixelRatio.get(),
+        marginLeft: 4,
+    },
+    listViewIcon: {
+        marginRight: 15
+    },
+    textStyle: {
+        color: '#545454',
+        flex: 1,
+        flexDirection: 'row'
+    },
+    flowRight: {
+        flexDirection: 'row',
+        alignSelf: 'stretch',
+        justifyContent: 'space-between',
+        flex: 1
+    },
+    paddingFour: {
+        padding: 4
+    },
+    noteTitle: {
+        fontSize: 16,
+        color: '#404040'
+    },
+    noteInputBlack: {
+        height: 40,
+        color:'black',
+    },
+    noteInputBlue: {
+        height: 40,
+        color:'#42638E',
+    },
+    noteButton: {
+        height: 36,
+        flex: 1,
+        flexDirection: 'row',
+        backgroundColor: '#cc0000',
+        borderColor: '#cc0000',
+        borderWidth: 1,
+        borderRadius: 4,
+        marginBottom: 10,
+        alignSelf: 'stretch',
+        justifyContent: 'center'
+    },
     button: {
         height: 36,
         flex: 1,
