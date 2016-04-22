@@ -87,6 +87,41 @@ var Styles = StyleSheet.create({
         flexDirection: 'row',
         alignSelf: 'stretch'
     },
+    menuTitle: {
+        height: 50,
+        flex: 1,
+        flexDirection: 'row',
+        backgroundColor: '#cd201f',
+        alignSelf: 'stretch'
+    },
+    scene: {
+        flex: 1,
+        paddingTop: 50,
+    },
+    row: {
+        flex: 1,
+        alignItems: 'center',
+        backgroundColor: 'white',
+        flexDirection: 'row',
+        padding: 12,
+    },
+    flowRight: {
+        flexDirection: 'row',
+        alignSelf: 'stretch',
+        justifyContent: 'space-between',
+        flex: 1
+    },
+    textStyle: {
+        color: '#545454',
+        flex: 1,
+        flexDirection: 'row',
+    },
+    cellBorder: {
+        backgroundColor: 'rgba(0, 0, 0, 0.1)',
+        // Trick to get the thinest line the device can display
+        height: 1 / PixelRatio.get(),
+        marginLeft: 4,
+    },
 });
 
 module.exports = Styles;

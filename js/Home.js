@@ -14,9 +14,8 @@ var {
 
 var Styles = require('./Styles.js');
 var Opportunities = require('./Opportunities.js');
-var Tasks = require('./Tasks.js');
-var Leads = require('./Leads.js');
-
+var Tasks = require('./TaskPage.js');
+var Leads = require('./LeadPage.js');
 
 var Home = React.createClass({
   viewLeads: function() {
