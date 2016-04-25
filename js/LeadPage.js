@@ -57,27 +57,29 @@ var Leads = React.createClass({
 
     render: function() {
         return (
+          <View style={Styles.scene}>
             <ListView
               dataSource={this.state.dataSource}
               renderRow={this.renderRow} />
+          </View>
       );
     },
 
     renderRow: function(rowData: Object) {
         return (
         	<TouchableHighlight onPress={() => this.viewLead(rowData['Name'], rowData['Id'])}>
-                <View>
-                    <View style={Styles.row}>
-                      <Text style={Styles.rowText} numberOfLines={1}>
-                      {rowData['Name'].substring(0,35)}
-                      </Text>
-                      <Text>
-                        <Icon name="chevron-right" color="#48BBEC" />
-                      </Text>
-                    </View>
-                    <View style={Styles.cellBorder} />
-                </View>
-            </TouchableHighlight>
+              <View>
+                  <View style={Styles.row}>
+                    <Text style={Styles.rowText} numberOfLines={1}>
+                    {rowData['Name'].substring(0,35)}
+                    </Text>
+                    <Text>
+                      <Icon name="chevron-right" color="#48BBEC" />
+                    </Text>
+                  </View>
+                  <View style={Styles.cellBorder} />
+              </View>
+          </TouchableHighlight>
         );
     }
 });

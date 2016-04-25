@@ -45,11 +45,16 @@ var NotePage = React.createClass({
           });
       };
 
+      callback();
+
       // Observe focus change events from this component.
       this._listeners = [
-        navigator.navigationContext.addListener('willfocus', callback),
-        navigator.navigationContext.addListener('didfocus', callback),
+        navigator.navigationContext.addListener('willfocus', callback)
       ];
+    },
+
+    componentWillUnmount: function() {
+      this._listeners && this._listeners.forEach(listener => listener.remove());
     },
 
     getInitialState: function() {

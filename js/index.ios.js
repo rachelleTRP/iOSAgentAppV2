@@ -87,7 +87,7 @@ var App = React.createClass({
         titleTextColor='#48BBEC'
         ref={(navigator) => global.navigator = navigator}
         initialRoute={{
-          title: <Icon name='keyboard-arrow-right' size={25} color='#48BBEC' />,
+          title: 'Home',
           component: Home,
           passProps: {userId: that.state.userId}
         }} />);
