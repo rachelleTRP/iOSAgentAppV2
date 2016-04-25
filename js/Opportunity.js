@@ -25,6 +25,7 @@ var CreateNote = require('./CreateNote.js');
 var OpportunityClass = React.createClass({
   getInitialState: function() {
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    console.log('opportunity log 3');
     return {
         dataSource: ds.cloneWithRows([]),
         loaded: false
@@ -32,11 +33,13 @@ var OpportunityClass = React.createClass({
   },
 
   componentWillMount: function() {
+    console.log('opportunity log 1');
     var that = this;
     var soql = 'SELECT Id,Name,Account.Name,Type,Description,StageName,LeadSource,Probability FROM Opportunity WHERE Id = \''
       +that.props.oppId+'\'';
     forceClient.query(soql,
       function(response) {
+        console.log('opportunity log 2');
           if (response.records.length > 0) {
             var fields = response.records[0];
             var data = [];
@@ -60,6 +63,7 @@ var OpportunityClass = React.createClass({
     },
 
     render: function() {
+      console.log('opportunity log 4');
         if (!this.state.loaded) {
           return(
             <View style={{flex:1,
@@ -95,6 +99,7 @@ var OpportunityClass = React.createClass({
 
     renderRow: function(rowData: Object) {
       console.log(rowData);
+      console.log('opportunity log 5');
       if (rowData.substring(0,3) === 'Id:') {
           return null;
       } else if (rowData.substring(0,5) === 'Name:') {

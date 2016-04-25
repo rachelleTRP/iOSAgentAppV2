@@ -15,20 +15,23 @@ var {
     Navigator,
 } = React;
 
-var forceClient = require('./react.force.net.js');
 var Styles = require('./Styles.js');
+var forceClient = require('./react.force.net.js');
+var GiftedSpinner = require('react-native-gifted-spinner');
 var Icon = require('react-native-vector-icons/MaterialIcons');
+
 var NotePage = require('./NotePage.js');
 
 var LeadClass = React.createClass({
 	getInitialState: function() {
-        var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 		return {
-          dataSource: ds.cloneWithRows([])
-      	};
+      dataSource: ds.cloneWithRows([]),
+      loaded: false
+  	};
 	},
 
-	componentDidMount: function() {
+	componentWillMount: function() {
         var that = this;
         var soql = 'SELECT Name,Email,Phone,Status,LeadSource FROM Lead WHERE Id = \'' + that.props.leadId + '\' LIMIT 1';
         forceClient.query(soql,
@@ -43,7 +46,8 @@ var LeadClass = React.createClass({
                     }
 
                     that.setState({
-                        dataSource: that.getDataSource(data)
+                        dataSource: that.getDataSource(data),
+                        loaded: true
                     });
                 }
           });
@@ -54,29 +58,37 @@ var LeadClass = React.createClass({
     },
 
 	render: function() {
-        return (
-            <View style={Styles.container}>
-                <ScrollView>
-                    <ListView
-                        dataSource={this.state.dataSource}
-                        renderRow={this.renderRow} />
-                </ScrollView>
-                <View>
-                  <TouchableOpacity style={Styles.row}
-                    onPress={() => {
-                      this.props.navigator.push({
-                        name: 'NotePage',
-                        id: 'NotePage',
-                        passProps: { relatedId: this.props.leadId }})
-                    }}>
-                    <Icon name='note' size={25} style={Styles.listViewIcon}/>
-                    <Text style={Styles.textStyle}>Notes</Text>
-                    <Icon name='mode-edit' size={25}/>
-                  </TouchableOpacity>
-                  <View style={Styles.cellBorder} />
-                </View>
+    if (!this.state.loaded) {
+      return(
+        <View style={{flex:1,
+          flexDirection:'row',
+          alignItems:'center',
+          justifyContent:'center'}}>
+          <GiftedSpinner/>
+        </View>
+      );
+    }
+    return (
+        <View style={Styles.container}>
+            <ListView
+                dataSource={this.state.dataSource}
+                renderRow={this.renderRow} />
+            <View>
+              <TouchableOpacity style={Styles.row}
+                onPress={() => {
+                  this.props.navigator.push({
+                    name: 'NotePage',
+                    id: 'Notes',
+                    passProps: { relatedId: this.props.leadId }})
+                }}>
+                <Icon name='note' size={25} style={Styles.listViewIcon}/>
+                <Text style={Styles.textStyle}>Notes</Text>
+                <Icon name='mode-edit' size={25}/>
+              </TouchableOpacity>
+              <View style={Styles.cellBorder} />
             </View>
-        );
+        </View>
+      );
     },
 
     renderRow: function(rowData: Object) {

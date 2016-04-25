@@ -413,13 +413,17 @@ var Styles = StyleSheet.create({
         fontSize: 16,
         color: '#404040',
     },
-    noteInputBlack: {
+    noteInput: {
         height: 40,
-        color:'black',
+        color:'grey',
+        borderColor: '#d9d9d9',
+        borderWidth: 1,
+        paddingLeft: 4,
     },
-    noteInputBlue: {
+    noteText: {
         height: 40,
-        color:'#42638E',
+        color:'grey',
+        paddingLeft: 4,
     },
     noteButton: {
         height: 36,

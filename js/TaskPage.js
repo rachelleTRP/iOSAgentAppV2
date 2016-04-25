@@ -67,13 +67,11 @@ var TaskPageClass = React.createClass({
       }
 
       return (
-        <View style={Styles.scene}>
-          <ScrollView>
-            <ListView style={{flex: 1}}
-                dataSource={that.state.dataSource}
-                renderRow={this.renderRow} />
-          </ScrollView>
-        </View>
+        <ScrollView>
+          <ListView style={{flex: 1}}
+              dataSource={that.state.dataSource}
+              renderRow={this.renderRow} />
+        </ScrollView>
       );
     },
 

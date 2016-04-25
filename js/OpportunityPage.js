@@ -60,13 +60,11 @@ var OpportunityPageClass = React.createClass({
           );
         }
         return (
-          <View style={Styles.scene}>
-            <ScrollView>
-              <ListView
-                dataSource={this.state.dataSource}
-                renderRow={this.renderRow} />
-            </ScrollView>
-          </View>
+          <ScrollView>
+            <ListView
+              dataSource={this.state.dataSource}
+              renderRow={this.renderRow} />
+          </ScrollView>
       );
     },
 
@@ -78,8 +76,8 @@ var OpportunityPageClass = React.createClass({
                   style={Styles.row}
                   onPress={() => {
                     that.props.navigator.push({
-                      component: Opportunity,
-                      title: 'Opportunity Details',
+                      id: 'Opportunity',
+                      name: 'Opportunity Details',
                       passProps: {oppId: rowData['Id']}
                     })
                   }}>

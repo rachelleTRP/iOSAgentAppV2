@@ -23,6 +23,14 @@ var Contact = require('./Contact.js');
 
 var ContactPageClass = React.createClass({
 
+    getInitialState: function() {
+      var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+      return {
+          dataSource: ds.cloneWithRows([]),
+          loaded: false
+      };
+    },
+
     componentWillMount: function() {
       var that = this;
       var soql = 'SELECT Id, Name FROM Contact WHERE Owner.Id = \''
@@ -35,14 +43,6 @@ var ContactPageClass = React.createClass({
             });
 
         });
-    },
-
-    getInitialState: function() {
-      var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-      return {
-          dataSource: ds.cloneWithRows([]),
-          loaded: false
-      };
     },
 
     getDataSource: function(users: Array<any>): ListViewDataSource {

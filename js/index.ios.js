@@ -47,7 +47,7 @@ var forceClient = require('./react.force.net.js');
 
 var profileUrl = '';
 
-var Styles = require('./Styles.js');
+var Styles = require('./Styles');
 var MainPage = require('./MainPage');
 var TaskPage = require('./TaskPage');
 var Task = require('./Task');
@@ -61,7 +61,7 @@ var NotePage = require('./NotePage');
 var Note = require('./Note');
 var CreateNote = require('./CreateNote');
 var MetricsPage = require('./MetricsPage');
-var ProfilePage = require('./ProfilePage.js');
+var ProfilePage = require('./ProfilePage');
 
 var App = React.createClass({
 
@@ -188,11 +188,17 @@ var App = React.createClass({
         titleTextColor='#48BBEC'
         ref={(navigator) => global.navigator = navigator}
         initialRoute={{
+<<<<<<< HEAD
           title: 'Main',
           component: MainPage,
           passProps: {userId: that.state.userId, userName: that.state.userName},
           onLeftButtonPress: () => openDrawer(),
           leftButtonTitle: 'Open Menu',
+=======
+          title: 'Home',
+          component: Home,
+          passProps: {userId: that.state.userId}
+>>>>>>> 89ae995c7d54d438e03be21a5a49ae4df7e0803e
         }} />);
     var navigationView = (
       <View style={{flex: 1, backgroundColor: '#fff'}}>
@@ -480,7 +486,7 @@ var NavigationBarRouteMapper = {
       if (profileUrl === '' || route !== undefined && (route.id === 'Contact'
         || route.id === 'Lead' || route.id === 'Opportunity'
         || route.id === 'Task' || route.id === 'TaskPage'
-        || route.id === 'NotePage' || route.id === 'Note' || route.id === 'CreateNote')) {
+        || route.id === 'Note' || route.id === 'CreateNote')) {
 
         return null;
     } else if (route !== undefined && route.id === 'ProfilePage') {
@@ -495,6 +501,19 @@ var NavigationBarRouteMapper = {
             />
           </TouchableOpacity>
         );
+    } else if (route !== undefined && route.id === 'NotePage') {
+      var routes = navigator.getCurrentRoutes();
+      var curRoute = routes[routes.length-1];
+      return (
+        <TouchableOpacity style={{flex: 1, justifyContent: 'center'}}
+          onPress={() => {
+            navigator.push({ id: 'CreateNote', name: 'New Note',
+              passProps: { relatedId: curRoute.passProps.relatedId }})
+          }}>
+          <Icon name='note-add' size={30}
+            style={{ height:30, width: 30, marginRight: 8, marginBottom: 5 }} />
+        </TouchableOpacity>
+      );
     } else {
       return(
         <TouchableOpacity style={{flex: 1, justifyContent: 'center'}}

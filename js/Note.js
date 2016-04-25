@@ -17,6 +17,7 @@ var {
 var Styles = require('./Styles.js');
 var forceClient = require('./react.force.net.js');
 var Icon = require('react-native-vector-icons/MaterialIcons');
+var GiftedSpinner = require('react-native-gifted-spinner');
 var NotePage = require('./NotePage.js');
 
 var NoteClass = React.createClass({
@@ -35,6 +36,7 @@ var NoteClass = React.createClass({
       +that.props.noteId+'\'';
     forceClient.query(soql,
       function(response) {
+        console.log('note log componentWillMount');
           if (response.records.length > 0) {
             var fields = response.records[0];
             for (var i in fields) {
@@ -53,12 +55,13 @@ var NoteClass = React.createClass({
     },
 
     updateNote: function() {
+      console.log('note log');
       var that = this;
       that.makeEditable(false);
       forceClient.update('Note', that.props.noteId,
         { Title: that.state.title, Body: that.state.body },
         function(resp) {
-          console.log(resp);
+          console.log('note log ' + resp);
           that.props.navigator.pop();
         },
         function(resp) {}
@@ -66,10 +69,11 @@ var NoteClass = React.createClass({
     },
 
     deleteNote: function() {
+      console.log('note log');
       var that = this;
       forceClient.del('Note', that.props.noteId,
         function(resp) {
-          console.log(resp);
+          console.log('note log ' + resp);
           that.props.navigator.pop();
         },
         function(resp) {}
@@ -83,8 +87,10 @@ var NoteClass = React.createClass({
     },
 
     render: function() {
+      console.log('note log render');
         var that = this;
         if (that.state.editable) {
+          console.log('note log');
             return (
               <View style={Styles.container}>
                 <ScrollView>
@@ -108,7 +114,7 @@ var NoteClass = React.createClass({
                     </View>
                     <View style={{paddingHorizontal: 4}}>
                         <TextInput
-                          style={Styles.noteInputBlue}
+                          style={Styles.noteInput}
                           ref={'textInput1'}
                           editable={true}
                           defaultValue={that.state.title}
@@ -121,7 +127,7 @@ var NoteClass = React.createClass({
                     </View>
                     <View style={{paddingHorizontal: 4}}>
                         <TextInput
-                          style={Styles.noteInputBlue}
+                          style={Styles.noteInput}
                           ref={'textInput2'}
                           editable={true}
                           defaultValue={that.state.body}
@@ -139,6 +145,7 @@ var NoteClass = React.createClass({
               </View>
           );
       } else {
+        console.log('note log');
           return (
             <View style={Styles.container}>
               <ScrollView>
@@ -163,7 +170,7 @@ var NoteClass = React.createClass({
                   </View>
                   <View style={{paddingHorizontal: 4}}>
                       <TextInput
-                        style={Styles.noteInputBlack}
+                        style={Styles.noteText}
                         ref={'textInput1'}
                         editable={false}
                         defaultValue={that.state.title}
@@ -176,7 +183,7 @@ var NoteClass = React.createClass({
                   </View>
                   <View style={{paddingHorizontal: 4}}>
                       <TextInput
-                        style={Styles.noteInputBlack}
+                        style={Styles.noteText}
                         ref={'textInput2'}
                         editable={false}
                         defaultValue={that.state.body}

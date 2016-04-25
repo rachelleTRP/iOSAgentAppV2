@@ -66,13 +66,11 @@ var TaskClass = React.createClass({
           );
         }
         return (
-          <View style={Styles.scene}>
-            <ScrollView>
-              <ListView
-                dataSource={this.state.dataSource}
-                renderRow={this.renderRow} />
-            </ScrollView>
-          </View>
+          <ScrollView>
+            <ListView
+              dataSource={this.state.dataSource}
+              renderRow={this.renderRow} />
+          </ScrollView>
       );
     },
 

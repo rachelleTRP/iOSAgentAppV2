@@ -45,11 +45,16 @@ var NotePageClass = React.createClass({
           });
       };
 
+      callback();
+
       // Observe focus change events from this component.
       this._listeners = [
-        navigator.navigationContext.addListener('willfocus', callback),
-        navigator.navigationContext.addListener('didfocus', callback),
+        navigator.navigationContext.addListener('willfocus', callback)
       ];
+    },
+
+    componentWillUnmount: function() {
+      this._listeners && this._listeners.forEach(listener => listener.remove());
     },
 
     getInitialState: function() {
@@ -76,14 +81,15 @@ var NotePageClass = React.createClass({
     },
 
     renderRow: function(rowData: Object) {
+      console.log('note log noteId: ' + rowData['Id']);
       return (
         <View>
             <TouchableHighlight
               style={Styles.row}
               onPress={() => {
                 this.props.navigator.push({
-                  title: 'Note',
-                  component: Note,
+                  name: 'Note',
+                  id: 'Note',
                   passProps: {noteId: rowData['Id'], relatedId: this.props.relatedId},
 
                 })

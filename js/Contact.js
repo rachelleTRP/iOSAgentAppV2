@@ -35,6 +35,7 @@ var ContactClass = React.createClass({
       +that.props.contactId+'\'';
     forceClient.query(soql,
       function(response) {
+        console.log('contact log 1');
           if (response.records.length > 0) {
             var fields = response.records[0];
             var data = [];

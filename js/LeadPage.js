@@ -83,7 +83,7 @@ var LeadPageClass = React.createClass({
                     <Text numberOfLines={1} style={Styles.textStyle} >
                      {rowData['Name']}
                     </Text>
-                    <Icon name='keyboard-arrow-right' size={25} />
+                    <Icon name='keyboard-arrow-right' size={25} color='#cc0000' />
                 </View>
               </TouchableOpacity>
               <View style={Styles.cellBorder} />
