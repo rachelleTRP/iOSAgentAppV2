@@ -6,10 +6,11 @@ var {
     StyleSheet,
     Text,
     View,
-    NavigatorIOS,
     TabBarIOS,
     ActivityIndicatorIOS,
-    ScrollView
+    ScrollView,
+    Component,
+    Navigator
 } = React;
 
 import Chart from 'react-native-chart';
@@ -55,11 +56,11 @@ const chartData = [
 
 const xLabels = ['0','1','2','3','4','5','6','7','8','9','10','11'];
 
-var Metrics = React.createClass({
+var MetricsClass = React.createClass({
 
     getInitialState: function() {
         // getMonth(), getFullYear()
-        var today = new Date(); 
+        var today = new Date();
         var startDate = today.setMonth(today.getMonth() - 5);
       return {
         startDate: startDate,
@@ -69,13 +70,13 @@ var Metrics = React.createClass({
 
     renderTransactionRevenue: function() {
         var that = this;
-        var soql = 'SELECT Elapsed_Transaction_Signed_Time__c, Net_Revenue__c, StageName FROM Opportunity' + 
-                    ' WHERE Owner.Id = \'' + that.props.userId + '\' '+ 
+        var soql = 'SELECT Elapsed_Transaction_Signed_Time__c, Net_Revenue__c, StageName FROM Opportunity' +
+                    ' WHERE Owner.Id = \'' + that.props.userId + '\' '+
                     ' AND CreatedDateTime__c >= ' + that.state.startDate.toISOString() + //TODO: remember to set the date part to the first of month, and time 00:00:00Z
-                    ' AND trp_opp_Transaction_Property_Type__c != \'Rental Provider\' ' + 
-                    ' AND trp_opp_Transaction_Property_Type__c != \'Rental Seeker\' ' + 
-                    ' AND trp_opp_Transaction_Property_Type__c != \'Mortgage\' ' + 
-                    ' AND Type != \'Mortgage\' AND Type != \'Rental Provider\' AND Type != \'Rental Seeker\' ' + 
+                    ' AND trp_opp_Transaction_Property_Type__c != \'Rental Provider\' ' +
+                    ' AND trp_opp_Transaction_Property_Type__c != \'Rental Seeker\' ' +
+                    ' AND trp_opp_Transaction_Property_Type__c != \'Mortgage\' ' +
+                    ' AND Type != \'Mortgage\' AND Type != \'Rental Provider\' AND Type != \'Rental Seeker\' ' +
                     ' AND LeadSource != \'Referral - Agent\' ';
         forceClient.query(soql,
           function(response) {
@@ -92,7 +93,7 @@ var Metrics = React.createClass({
 
     renderChart: function(title, chartData) {
         return(<Chart chartTitle={title}
-                      style={Styles.chart}
+                      style={Styles.metricsChart}
                       chartData={chartData}
                       verticalGridStep={5}
                       xLabels={xLabels}
@@ -102,28 +103,28 @@ var Metrics = React.createClass({
     render: function() {
 
         return (
-            <View style={Styles.chartContainer}>
+            <View style={Styles.metricsChartContainer}>
                 <ScrollView style={Styles.scrollView}>
                     <Chart chartTitle="Opportunity Volume"
-                        style={Styles.chart}
+                        style={Styles.metricsChart}
                         chartData={chartData}
                         verticalGridStep={5}
                         xLabels={xLabels}
                      />
                      <Chart chartTitle="Transaction Revenue"
-                        style={Styles.chart}
+                        style={Styles.metricsChart}
                         chartData={chartData}
                         verticalGridStep={5}
                         xLabels={xLabels}
                      />
                      <Chart chartTitle="Conversion Rate (Actual)"
-                        style={Styles.chart}
+                        style={Styles.metricsChart}
                         chartData={chartData}
                         verticalGridStep={5}
                         xLabels={xLabels}
                      />
                      <Chart chartTitle="Conversion Rate (4 Weeks Moving Avg)"
-                        style={Styles.chart}
+                        style={Styles.metricsChart}
                         chartData={chartData}
                         verticalGridStep={5}
                         xLabels={xLabels}
@@ -134,5 +135,22 @@ var Metrics = React.createClass({
     }
 });
 
+class Metrics extends Component {
 
-module.exports = Metrics; 
+  render() {
+    return (
+      <Navigator
+          renderScene={(route, navigator) => this.renderScene(route, navigator)}
+          navigator={this.props.navigator} />
+    );
+  }
+
+  renderScene(route, navigator) {
+    var that = this;
+    return(
+      <MetricsClass navigator={that.props.navigator} userName={that.props.userName} />
+      );
+  }
+}
+
+module.exports = Metrics;

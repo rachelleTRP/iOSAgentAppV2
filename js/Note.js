@@ -19,7 +19,7 @@ var forceClient = require('./react.force.net.js');
 var Icon = require('react-native-vector-icons/MaterialIcons');
 var NotePage = require('./NotePage.js');
 
-var Note = React.createClass({
+var NoteClass = React.createClass({
   getInitialState: function() {
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     return {
@@ -196,5 +196,20 @@ var Note = React.createClass({
       }
     }
 });
+
+class Note extends Component {
+  render() {
+    return (
+      <Navigator
+          renderScene={(route, navigator) => this.renderScene(route, navigator)}
+          navigator={this.props.navigator} />
+    );
+  }
+  renderScene(route, navigator) {
+    return (
+        <NoteClass navigator={this.props.navigator} noteId={this.props.noteId} relatedId={this.props.relatedId}/>
+    );
+  }
+}
 
 module.exports = Note;

@@ -18,9 +18,7 @@ var forceClient = require('./react.force.net.js');
 var GiftedSpinner = require('react-native-gifted-spinner');
 var Icon = require('react-native-vector-icons/MaterialIcons');
 
-var NotePage = require('./NotePage.js');
-
-var ContactClass = React.createClass({
+var TaskClass = React.createClass({
   getInitialState: function() {
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     return {
@@ -31,8 +29,8 @@ var ContactClass = React.createClass({
 
   componentWillMount: function() {
     var that = this;
-    var soql = 'SELECT Name,Email,Phone FROM Contact WHERE Id = \''
-      +that.props.contactId+'\'';
+    var soql = 'SELECT Subject,ActivityDate,Priority,Description FROM Task WHERE Id = \''
+      +that.props.taskId+'\'';
     forceClient.query(soql,
       function(response) {
           if (response.records.length > 0) {
@@ -42,15 +40,13 @@ var ContactClass = React.createClass({
                 if (typeof fields[i] !== 'object') {
                   data.push(i+': '+fields[i]);
                 }
-
             }
-            console.log(data);
 
             that.setState({
                 dataSource: that.getDataSource(data),
                 loaded: true
             });
-        }
+          }
       });
     },
 
@@ -70,61 +66,60 @@ var ContactClass = React.createClass({
           );
         }
         return (
-          <ScrollView>
-            <ListView
-              dataSource={this.state.dataSource}
-              renderRow={this.renderRow} />
-            <View>
-                <TouchableOpacity style={Styles.row}
-                  onPress={() => {
-                    this.props.navigator.push({
-                      id: 'NotePage',
-                      name: 'Notes',
-                      passProps: { relatedId: this.props.contactId }})
-                  }}>
-                  <Icon name='note' size={25} style={Styles.listViewIcon}/>
-                  <Text style={Styles.textStyle}>Notes</Text>
-                  <Icon name='mode-edit' size={25}/>
-                </TouchableOpacity>
-                <View style={Styles.cellBorder} />
-            </View>
-          </ScrollView>
+          <View style={Styles.scene}>
+            <ScrollView>
+              <ListView
+                dataSource={this.state.dataSource}
+                renderRow={this.renderRow} />
+            </ScrollView>
+          </View>
       );
     },
 
     renderRow: function(rowData: Object) {
-      console.log(rowData);
-        if (rowData.substring(0,5) === 'Name:') {
+        if (rowData.substring(0,7) === 'Subject') {
             return (
               <View>
                   <View style={Styles.row}>
-                    <Icon name='person' size={25} style={Styles.listViewIcon}/>
+                    <Icon name='subject' size={25} style={Styles.listViewIcon}/>
                     <Text numberOfLines={1} style={Styles.textStyle}>
-                     {rowData.substring(6)};
+                     {rowData.substring(9)}
                     </Text>
                   </View>
                   <View style={Styles.cellBorder} />
               </View>
             );
-        } else if (rowData.substring(0,5) === 'Email') {
+        } else if (rowData.substring(0,12) === 'ActivityDate') {
             return (
               <View>
                   <View style={Styles.row}>
-                    <Icon name='email' size={25} style={Styles.listViewIcon}/>
+                    <Icon name='date-range' size={25} style={Styles.listViewIcon}/>
                     <Text numberOfLines={1} style={Styles.textStyle}>
-                     {rowData.substring(7)}
+                     {rowData.substring(14)}
                     </Text>
                   </View>
                   <View style={Styles.cellBorder} />
               </View>
             );
-        } else if (rowData.substring(0,5) === 'Phone') {
+        } else if (rowData.substring(0,8) === 'Priority') {
             return (
               <View>
                   <View style={Styles.row}>
-                    <Icon name='phone' size={25} style={Styles.listViewIcon}/>
+                    <Icon name='priority-high' size={25} style={Styles.listViewIcon}/>
                     <Text numberOfLines={1} style={Styles.textStyle}>
-                     {rowData.substring(7)}
+                     {rowData.substring(10)}
+                    </Text>
+                  </View>
+                  <View style={Styles.cellBorder} />
+              </View>
+            );
+        } else if (rowData.substring(0,11) === 'Description') {
+            return (
+              <View>
+                  <View style={Styles.row}>
+                    <Icon name='description' size={25} style={Styles.listViewIcon}/>
+                    <Text numberOfLines={1} style={Styles.textStyle}>
+                     {rowData.substring(13)}
                     </Text>
                   </View>
                   <View style={Styles.cellBorder} />
@@ -145,7 +140,7 @@ var ContactClass = React.createClass({
     }
 });
 
-class Contact extends Component {
+class Task extends Component {
   render() {
     return (
       <Navigator
@@ -155,9 +150,9 @@ class Contact extends Component {
   }
   renderScene(route, navigator) {
     return (
-        <ContactClass navigator={this.props.navigator} contactId={this.props.contactId}/>
+        <TaskClass navigator={this.props.navigator} taskId={this.props.taskId}/>
     );
   }
 }
 
-module.exports = Contact;
+module.exports = Task;

@@ -2,74 +2,123 @@
 
 var React = require('react-native');
 var {
-    AppRegistry,
-    StyleSheet,
-    Text,
-    View,
-    ListView,
-    PixelRatio,
-    NavigatorIOS
+  Stylesheet,
+  Component,
+  View,
+  Text,
+  ListView,
+  ScrollView,
+  Navigator,
+  TouchableHighlight,
+  TouchableOpacity
 } = React;
 
-var forceClient = require('./react.force.net.js');
 var Styles = require('./Styles.js');
-var Icon = require('react-native-vector-icons/FontAwesome');
+var oauth = require('./react.force.oauth');
+var forceClient = require('./react.force.net.js');
+var GiftedSpinner = require('react-native-gifted-spinner');
 
-var Tasks = React.createClass({
-	getInitialState: function() {
+var Task = require('./Task.js');
 
+var TaskPageClass = React.createClass({
+    getInitialState: function() {
       var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
       return {
-          dataSource: ds.cloneWithRows([]),
+        dataSource: ds.cloneWithRows([]),
+        loaded: false
       };
     },
 
-    componentDidMount: function() {
-        var that = this;
-        console.log('that.props.userId: ' + that.props.userId);
-        if (that.props.userId === undefined) return;
-        var soql = 'SELECT Id, Subject FROM Task WHERE OwnerId = \'' + that.props.userId + '\' LIMIT 10';
-        forceClient.query(soql,
-          function(response) {
-              var oppts = response.records;
-              var data = [];
-              for (var i in oppts) {
-                  data.push(oppts[i]["Subject"]);
-              }
-              that.setState({
-                  dataSource: that.getDataSource(data),
-              });
-          });
-    },
-
-    getDataSource: function(tasks: Array<any>): ListViewDataSource {
-        return this.state.dataSource.cloneWithRows(tasks);
+    componentWillMount: function() {
+      var that = this;
+      var soql = 'SELECT Id,Subject FROM Task WHERE OwnerId = \''
+          +that.props.userId+ '\' and IsClosed = false and Type = \''+that.props.type
+          +'\' and ActivityDate ';
+      if (that.props.status === 'Overdue Tasks') {
+        soql += '< TODAY';
+      } else if (that.props.status === 'Due Today') {
+        soql += '= TODAY';
+      } else if (that.props.status === 'Due Later') {
+        soql += '> TODAY';
+      }
+      forceClient.query(soql,
+        function(response) {
+            var dataSource = response.records;
+            console.log(response);
+            that.setState({
+                dataSource: that.state.dataSource.cloneWithRows(dataSource),
+                loaded: true
+            });
+        }
+      );
     },
 
     render: function() {
-      console.log('Rendered Tasks');
-        return (
-            <ListView
-              dataSource={this.state.dataSource}
-              renderRow={this.renderRow} />
+      var that = this;
+      if (!that.state.loaded) {
+        return(
+          <View style={{flex:1,
+            flexDirection:'row',
+            alignItems:'center',
+            justifyContent:'center'}}>
+            <GiftedSpinner/>
+          </View>
+        );
+      }
+
+      return (
+        <View style={Styles.scene}>
+          <ScrollView>
+            <ListView style={{flex: 1}}
+                dataSource={that.state.dataSource}
+                renderRow={this.renderRow} />
+          </ScrollView>
+        </View>
       );
     },
 
     renderRow: function(rowData: Object) {
+        var that = this;
         return (
-                <View>
-                    <View style={Styles.row}>
-                      <Text style={Styles.rowText} numberOfLines={1}>
-                       {rowData.substring(0,35)}
-                      </Text>
-                      <Text>
-                        <Icon name="chevron-right" color="#48BBEC" />
-                      </Text>
-                    </View>
-                    <View style={Styles.cellBorder} />
-                </View>
+          <View>
+              <TouchableOpacity
+                style={Styles.row}
+                onPress={() => {
+                  that.props.navigator.push({
+                    name: 'Task',
+                    id: 'Task',
+                    passProps: {taskId: rowData['Id']}
+                  })
+                }}>
+                <ScrollView horizontal={true} contentContainerStyle={Styles.rowNoPad}>
+                  <Text numberOfLines={1} style={Styles.textStyle} >
+                   {rowData['Subject']}
+                  </Text>
+                </ScrollView>
+              </TouchableOpacity>
+              <View style={Styles.cellBorder} />
+          </View>
         );
     }
 });
 
-module.exports = Tasks;
+class TaskPage extends Component {
+
+  render() {
+    return (
+      <Navigator
+          renderScene={(route, navigator) => this.renderScene(route, navigator)}
+          navigator={this.props.navigator} />
+    );
+  }
+
+  // CINDY: have a red flag beside Priority tasks
+  renderScene(route, navigator) {
+    var that = this;
+    return(
+      <TaskPageClass navigator={that.props.navigator} userId={that.props.userId} type={that.props.type} status={that.props.status} />
+      );
+  }
+}
+
+module.exports = TaskPage;

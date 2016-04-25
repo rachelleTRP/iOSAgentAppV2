@@ -17,7 +17,7 @@ var forceClient = require('./react.force.net.js');
 var Icon = require('react-native-vector-icons/MaterialIcons');
 var Note = require('./Note.js');
 
-var NotePage = React.createClass({
+var NotePageClass = React.createClass({
 
     componentWillMount: function() {
       var that = this;
@@ -84,7 +84,8 @@ var NotePage = React.createClass({
                 this.props.navigator.push({
                   title: 'Note',
                   component: Note,
-                  passProps: {noteId: rowData['Id'], relatedId: this.props.relatedId}
+                  passProps: {noteId: rowData['Id'], relatedId: this.props.relatedId},
+
                 })
               }}>
               <View style={Styles.flowRight}>
@@ -99,5 +100,20 @@ var NotePage = React.createClass({
       );
     }
 });
+
+class NotePage extends Component {
+  render() {
+    return (
+      <Navigator
+          renderScene={(route, navigator) => this.renderScene(route, navigator)}
+          navigator={this.props.navigator} />
+    );
+  }
+  renderScene(route, navigator) {
+    return (
+        <NotePageClass navigator={this.props.navigator} relatedId={this.props.relatedId} />
+    );
+  }
+}
 
 module.exports = NotePage;

@@ -10,8 +10,9 @@ var {
     PixelRatio,
     ListView,
     ScrollView,
-    NavigatorIOS,
-    TouchableOpacity
+    TouchableOpacity,
+    Component,
+    Navigator,
 } = React;
 
 var forceClient = require('./react.force.net.js');
@@ -19,7 +20,7 @@ var Styles = require('./Styles.js');
 var Icon = require('react-native-vector-icons/MaterialIcons');
 var NotePage = require('./NotePage.js');
 
-var Lead = React.createClass({
+var LeadClass = React.createClass({
 	getInitialState: function() {
         var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 		return {
@@ -63,8 +64,9 @@ var Lead = React.createClass({
                 <View>
                   <TouchableOpacity style={Styles.row}
                     onPress={() => {
-                      this.props.navigator.push({ title: 'NotePage',
-                        component: NotePage,
+                      this.props.navigator.push({
+                        name: 'NotePage',
+                        id: 'NotePage',
                         passProps: { relatedId: this.props.leadId }})
                     }}>
                     <Icon name='note' size={25} style={Styles.listViewIcon}/>
@@ -153,5 +155,19 @@ var Lead = React.createClass({
     }
 });
 
+class Lead extends Component {
+  render() {
+    return (
+      <Navigator
+          renderScene={(route, navigator) => this.renderScene(route, navigator)}
+          navigator={this.props.navigator} />
+    );
+  }
+  renderScene(route, navigator) {
+    return (
+        <LeadClass navigator={this.props.navigator} leadId={this.props.leadId}/>
+    );
+  }
+}
 
-module.exports = Lead; 
+module.exports = Lead;

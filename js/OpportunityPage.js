@@ -19,7 +19,9 @@ var forceClient = require('./react.force.net.js');
 var GiftedSpinner = require('react-native-gifted-spinner');
 var Icon = require('react-native-vector-icons/MaterialIcons');
 
-var LeadPageClass = React.createClass({
+var Opportunity = require('./Opportunity.js');
+
+var OpportunityPageClass = React.createClass({
     getInitialState: function() {
       var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
       return {
@@ -30,7 +32,7 @@ var LeadPageClass = React.createClass({
 
     componentWillMount: function() {
       var that = this;
-      var soql = 'SELECT Id, Name FROM Lead WHERE Owner.Id = \''
+      var soql = 'SELECT Id, Name FROM Opportunity WHERE Owner.Id = \''
         +that.props.userId+'\'';
       forceClient.query(soql,
         function(response) {
@@ -58,41 +60,43 @@ var LeadPageClass = React.createClass({
           );
         }
         return (
-          <ScrollView>
-            <ListView
-              dataSource={this.state.dataSource}
-              renderRow={this.renderRow} />
-          </ScrollView>
+          <View style={Styles.scene}>
+            <ScrollView>
+              <ListView
+                dataSource={this.state.dataSource}
+                renderRow={this.renderRow} />
+            </ScrollView>
+          </View>
       );
     },
 
     renderRow: function(rowData: Object) {
         var that = this;
         return (
-          <View>
-              <TouchableOpacity
-                style={Styles.row}
-                onPress={() => {
-                  that.props.navigator.push({
-                    id: 'Lead',
-                    name: 'Lead Details',
-                    passProps: {leadId: rowData['Id']}
-                  })
-                }}>
-                <View style={Styles.flowRight}>
-                    <Text numberOfLines={1} style={Styles.textStyle} >
-                     {rowData['Name']}
-                    </Text>
-                    <Icon name='keyboard-arrow-right' size={25} />
-                </View>
-              </TouchableOpacity>
-              <View style={Styles.cellBorder} />
-          </View>
+            <View>
+                <TouchableOpacity
+                  style={Styles.row}
+                  onPress={() => {
+                    that.props.navigator.push({
+                      component: Opportunity,
+                      title: 'Opportunity Details',
+                      passProps: {oppId: rowData['Id']}
+                    })
+                  }}>
+                  <View style={Styles.flowRight}>
+                      <Text numberOfLines={1} style={Styles.textStyle} >
+                       {rowData['Name']}
+                      </Text>
+                      <Icon name='keyboard-arrow-right' size={25} />
+                  </View>
+                </TouchableOpacity>
+                <View style={Styles.cellBorder} />
+            </View>
         );
     }
 });
 
-class LeadPage extends Component {
+class OpportunityPage extends Component {
   render() {
     return (
       <Navigator
@@ -102,9 +106,9 @@ class LeadPage extends Component {
   }
   renderScene(route, navigator) {
     return (
-        <LeadPageClass navigator={this.props.navigator} userId={this.props.userId}/>
+        <OpportunityPageClass navigator={this.props.navigator} userId={this.props.userId} />
     );
   }
 }
 
-module.exports = LeadPage;
+module.exports = OpportunityPage;

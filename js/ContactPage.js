@@ -9,7 +9,8 @@ var {
   ListView,
   ScrollView,
   TouchableHighlight,
-  TouchableOpacity
+  TouchableOpacity,
+  Navigator
 } = React;
 
 var Styles = require('./Styles.js');
@@ -20,7 +21,7 @@ var Icon = require('react-native-vector-icons/MaterialIcons');
 
 var Contact = require('./Contact.js');
 
-var ContactPage = React.createClass({
+var ContactPageClass = React.createClass({
 
     componentWillMount: function() {
       var that = this;
@@ -60,13 +61,11 @@ var ContactPage = React.createClass({
           );
         }
         return (
-          <View style={Styles.scene}>
-            <ScrollView>
-              <ListView
-                dataSource={this.state.dataSource}
-                renderRow={this.renderRow} />
-            </ScrollView>
-          </View>
+          <ScrollView>
+            <ListView
+              dataSource={this.state.dataSource}
+              renderRow={this.renderRow} />
+          </ScrollView>
       );
     },
 
@@ -77,8 +76,8 @@ var ContactPage = React.createClass({
               style={Styles.row}
               onPress={() => {
                 this.props.navigator.push({
-                  title: 'Contact Details',
-                  component: Contact,
+                  name: 'Contact Details',
+                  id: 'Contact',
                   passProps: {contactId: rowData['Id']}
                 })
               }}>
@@ -86,7 +85,7 @@ var ContactPage = React.createClass({
                 <Text numberOfLines={1} style={Styles.textStyle} >
                  {rowData['Name']}
                 </Text>
-                <Icon name='keyboard-arrow-right' size={25} color='#48BBEC' />
+                <Icon name='keyboard-arrow-right' size={25} color='#cc0000' />
               </View>
             </TouchableOpacity>
             <View style={Styles.cellBorder} />
@@ -95,5 +94,19 @@ var ContactPage = React.createClass({
     }
 });
 
+class ContactPage extends Component {
+  render() {
+    return (
+      <Navigator
+          renderScene={(route, navigator) => this.renderScene(route, navigator)}
+          navigator={this.props.navigator} />
+    );
+  }
+  renderScene(route, navigator) {
+    return (
+        <ContactPageClass navigator={this.props.navigator} userId={this.props.userId} />
+    );
+  }
+}
 
 module.exports = ContactPage;
