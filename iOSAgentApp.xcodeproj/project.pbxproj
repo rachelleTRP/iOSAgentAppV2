@@ -1,0 +1,543 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02E37E28E528DD90AFBC849F /* libPods-iOSAgentApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E606AE0C7CABF6DAF27DF3CC /* libPods-iOSAgentApp.a */; };
+		0F363597441D49D8A087AC60 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0786A5BB71BF4D11963E8B3B /* Ionicons.ttf */; };
+		1ECA2CB3B3654445B8330E05 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93EB8C1863354C3A9FE99201 /* Foundation.ttf */; };
+		24410DE51C9B40FC00111A26 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 24410DE41C9B40FC00111A26 /* main.jsbundle */; };
+		24410DED1C9B416900111A26 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24410DEC1C9B415600111A26 /* libRNVectorIcons.a */; };
+		24410DF71C9B427900111A26 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24410DEF1C9B427900111A26 /* Entypo.ttf */; };
+		24410DF81C9B427900111A26 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24410DF01C9B427900111A26 /* EvilIcons.ttf */; };
+		24410DF91C9B427900111A26 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24410DF11C9B427900111A26 /* FontAwesome.ttf */; };
+		24410DFA1C9B427900111A26 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24410DF21C9B427900111A26 /* Foundation.ttf */; };
+		24410DFB1C9B427900111A26 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24410DF31C9B427900111A26 /* Ionicons.ttf */; };
+		24410DFC1C9B427900111A26 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24410DF41C9B427900111A26 /* MaterialIcons.ttf */; };
+		24410DFD1C9B427900111A26 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24410DF51C9B427900111A26 /* Octicons.ttf */; };
+		24410DFE1C9B427900111A26 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24410DF61C9B427900111A26 /* Zocial.ttf */; };
+		468A1D88FD4540ACA5629CE5 /* libRNChart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63707C151424476FB2D44A6C /* libRNChart.a */; };
+		4F8D5EA31B6C0568005E64D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F8D5EA21B6C0568005E64D4 /* main.m */; };
+		4F8D5EA61B6C0568005E64D4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F8D5EA51B6C0568005E64D4 /* AppDelegate.m */; };
+		4F8D5EAE1B6C0568005E64D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F8D5EAD1B6C0568005E64D4 /* Images.xcassets */; };
+		4F8D5EC81B6C0F94005E64D4 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F8D5EC71B6C0F94005E64D4 /* InitialViewController.m */; };
+		50B5F2E477634FDF96424C07 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89469C39E7114878B9A831A3 /* Zocial.ttf */; };
+		51917CC655EC45E58D986D03 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CF535FB4ACE4F1E8A053E5D /* EvilIcons.ttf */; };
+		5E0012F7F7984167A14F746F /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 160D8AE302754A058EA83B6F /* Octicons.ttf */; };
+		680F649F4CC84E2A963C531B /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F2DB3AFA99B4FF9B6A22F22 /* FontAwesome.ttf */; };
+		73B784A80AE54657A0D8C632 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60CC8E0177FF48E3BABB2531 /* MaterialIcons.ttf */; };
+		A9B8DA035CFA40A590165D92 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 499ED16B0B074DEE9FFEDE24 /* Entypo.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24410DEB1C9B415600111A26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24410DE71C9B415600111A26 /* RNVectorIcons.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5DBEB1501B18CEA900B34395;
+			remoteInfo = RNVectorIcons;
+		};
+		8DB0C2111CA1C380007FFF8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCCE3523B98641D4BC0A3CC2 /* RNChart.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 41FDC4F01AF5D0CF00DBBA9C;
+			remoteInfo = RNChart;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0786A5BB71BF4D11963E8B3B /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		160D8AE302754A058EA83B6F /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		1CF535FB4ACE4F1E8A053E5D /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		24410DE41C9B40FC00111A26 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		24410DE71C9B415600111A26 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
+		24410DEF1C9B427900111A26 /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
+		24410DF01C9B427900111A26 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
+		24410DF11C9B427900111A26 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		24410DF21C9B427900111A26 /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foundation.ttf; sourceTree = "<group>"; };
+		24410DF31C9B427900111A26 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
+		24410DF41C9B427900111A26 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		24410DF51C9B427900111A26 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
+		24410DF61C9B427900111A26 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
+		499ED16B0B074DEE9FFEDE24 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		4F8D5E9D1B6C0568005E64D4 /* iOSAgentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSAgentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F8D5EA11B6C0568005E64D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F8D5EA21B6C0568005E64D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4F8D5EA41B6C0568005E64D4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4F8D5EA51B6C0568005E64D4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4F8D5EAD1B6C0568005E64D4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4F8D5EC61B6C0F94005E64D4 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		4F8D5EC71B6C0F94005E64D4 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
+		60CC8E0177FF48E3BABB2531 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		63707C151424476FB2D44A6C /* libRNChart.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNChart.a; sourceTree = "<group>"; };
+		641A79C6255C9F5C2DC614D8 /* Pods-iOSAgentApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSAgentApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSAgentApp/Pods-iOSAgentApp.release.xcconfig"; sourceTree = "<group>"; };
+		7F2DB3AFA99B4FF9B6A22F22 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		89469C39E7114878B9A831A3 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		90400F35EE8FD2C6D3B8B7E7 /* Pods-iOSAgentApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSAgentApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSAgentApp/Pods-iOSAgentApp.debug.xcconfig"; sourceTree = "<group>"; };
+		93EB8C1863354C3A9FE99201 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		BCCE3523B98641D4BC0A3CC2 /* RNChart.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNChart.xcodeproj; path = "node_modules/react-native-chart/RNChart.xcodeproj"; sourceTree = "<group>"; };
+		E606AE0C7CABF6DAF27DF3CC /* libPods-iOSAgentApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSAgentApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F8D5E9A1B6C0568005E64D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02E37E28E528DD90AFBC849F /* libPods-iOSAgentApp.a in Frameworks */,
+				24410DED1C9B416900111A26 /* libRNVectorIcons.a in Frameworks */,
+				468A1D88FD4540ACA5629CE5 /* libRNChart.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		238DDCF1300C4BA4800C966D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				499ED16B0B074DEE9FFEDE24 /* Entypo.ttf */,
+				1CF535FB4ACE4F1E8A053E5D /* EvilIcons.ttf */,
+				7F2DB3AFA99B4FF9B6A22F22 /* FontAwesome.ttf */,
+				93EB8C1863354C3A9FE99201 /* Foundation.ttf */,
+				0786A5BB71BF4D11963E8B3B /* Ionicons.ttf */,
+				60CC8E0177FF48E3BABB2531 /* MaterialIcons.ttf */,
+				160D8AE302754A058EA83B6F /* Octicons.ttf */,
+				89469C39E7114878B9A831A3 /* Zocial.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		24410DE61C9B412500111A26 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				24410DE71C9B415600111A26 /* RNVectorIcons.xcodeproj */,
+				BCCE3523B98641D4BC0A3CC2 /* RNChart.xcodeproj */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		24410DE81C9B415600111A26 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24410DEC1C9B415600111A26 /* libRNVectorIcons.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24410DEE1C9B427900111A26 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				24410DEF1C9B427900111A26 /* Entypo.ttf */,
+				24410DF01C9B427900111A26 /* EvilIcons.ttf */,
+				24410DF11C9B427900111A26 /* FontAwesome.ttf */,
+				24410DF21C9B427900111A26 /* Foundation.ttf */,
+				24410DF31C9B427900111A26 /* Ionicons.ttf */,
+				24410DF41C9B427900111A26 /* MaterialIcons.ttf */,
+				24410DF51C9B427900111A26 /* Octicons.ttf */,
+				24410DF61C9B427900111A26 /* Zocial.ttf */,
+			);
+			name = Fonts;
+			path = "node_modules/react-native-vector-icons/Fonts";
+			sourceTree = "<group>";
+		};
+		37B95F29A292887A2CC072C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E606AE0C7CABF6DAF27DF3CC /* libPods-iOSAgentApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F8D5E941B6C0568005E64D4 = {
+			isa = PBXGroup;
+			children = (
+				24410DEE1C9B427900111A26 /* Fonts */,
+				24410DE61C9B412500111A26 /* Libraries */,
+				24410DE41C9B40FC00111A26 /* main.jsbundle */,
+				4F8D5E9F1B6C0568005E64D4 /* iOSAgentApp */,
+				4F8D5E9E1B6C0568005E64D4 /* Products */,
+				95FC818BCB0A26B1EC67A6D7 /* Pods */,
+				37B95F29A292887A2CC072C3 /* Frameworks */,
+				238DDCF1300C4BA4800C966D /* Resources */,
+			);
+			sourceTree = "<group>";
+		};
+		4F8D5E9E1B6C0568005E64D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F8D5E9D1B6C0568005E64D4 /* iOSAgentApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F8D5E9F1B6C0568005E64D4 /* iOSAgentApp */ = {
+			isa = PBXGroup;
+			children = (
+				4F8D5ECC1B6C1021005E64D4 /* Classes */,
+				4F8D5EA01B6C0568005E64D4 /* Supporting Files */,
+			);
+			path = iOSAgentApp;
+			sourceTree = "<group>";
+		};
+		4F8D5EA01B6C0568005E64D4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4F8D5EAD1B6C0568005E64D4 /* Images.xcassets */,
+				4F8D5EA11B6C0568005E64D4 /* Info.plist */,
+				4F8D5EA21B6C0568005E64D4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4F8D5ECC1B6C1021005E64D4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4F8D5EC61B6C0F94005E64D4 /* InitialViewController.h */,
+				4F8D5EC71B6C0F94005E64D4 /* InitialViewController.m */,
+				4F8D5EA41B6C0568005E64D4 /* AppDelegate.h */,
+				4F8D5EA51B6C0568005E64D4 /* AppDelegate.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		8DB0C20E1CA1C380007FFF8C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DB0C2121CA1C380007FFF8C /* libRNChart.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95FC818BCB0A26B1EC67A6D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90400F35EE8FD2C6D3B8B7E7 /* Pods-iOSAgentApp.debug.xcconfig */,
+				641A79C6255C9F5C2DC614D8 /* Pods-iOSAgentApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F8D5E9C1B6C0568005E64D4 /* iOSAgentApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F8D5EC01B6C0568005E64D4 /* Build configuration list for PBXNativeTarget "iOSAgentApp" */;
+			buildPhases = (
+				39F115428CDB04A31C62D5B3 /* Check Pods Manifest.lock */,
+				4F8D5E991B6C0568005E64D4 /* Sources */,
+				4F8D5E9A1B6C0568005E64D4 /* Frameworks */,
+				4F8D5E9B1B6C0568005E64D4 /* Resources */,
+				E57672B616CE5ACD1EACF7C8 /* Copy Pods Resources */,
+				8D2A797F4667FC5639CECAC8 /* Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOSAgentApp;
+			productName = iOSAgentApp;
+			productReference = 4F8D5E9D1B6C0568005E64D4 /* iOSAgentApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F8D5E951B6C0568005E64D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 720;
+				LastUpgradeCheck = 710;
+				ORGANIZATIONNAME = Salesforce;
+				TargetAttributes = {
+					4F8D5E9C1B6C0568005E64D4 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = 4F8D5E981B6C0568005E64D4 /* Build configuration list for PBXProject "iOSAgentApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4F8D5E941B6C0568005E64D4;
+			productRefGroup = 4F8D5E9E1B6C0568005E64D4 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8DB0C20E1CA1C380007FFF8C /* Products */;
+					ProjectRef = BCCE3523B98641D4BC0A3CC2 /* RNChart.xcodeproj */;
+				},
+				{
+					ProductGroup = 24410DE81C9B415600111A26 /* Products */;
+					ProjectRef = 24410DE71C9B415600111A26 /* RNVectorIcons.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				4F8D5E9C1B6C0568005E64D4 /* iOSAgentApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		24410DEC1C9B415600111A26 /* libRNVectorIcons.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNVectorIcons.a;
+			remoteRef = 24410DEB1C9B415600111A26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8DB0C2121CA1C380007FFF8C /* libRNChart.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNChart.a;
+			remoteRef = 8DB0C2111CA1C380007FFF8C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F8D5E9B1B6C0568005E64D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24410DFC1C9B427900111A26 /* MaterialIcons.ttf in Resources */,
+				24410DFD1C9B427900111A26 /* Octicons.ttf in Resources */,
+				24410DFE1C9B427900111A26 /* Zocial.ttf in Resources */,
+				4F8D5EAE1B6C0568005E64D4 /* Images.xcassets in Resources */,
+				24410DF91C9B427900111A26 /* FontAwesome.ttf in Resources */,
+				24410DF81C9B427900111A26 /* EvilIcons.ttf in Resources */,
+				24410DFB1C9B427900111A26 /* Ionicons.ttf in Resources */,
+				24410DFA1C9B427900111A26 /* Foundation.ttf in Resources */,
+				24410DF71C9B427900111A26 /* Entypo.ttf in Resources */,
+				24410DE51C9B40FC00111A26 /* main.jsbundle in Resources */,
+				A9B8DA035CFA40A590165D92 /* Entypo.ttf in Resources */,
+				51917CC655EC45E58D986D03 /* EvilIcons.ttf in Resources */,
+				680F649F4CC84E2A963C531B /* FontAwesome.ttf in Resources */,
+				1ECA2CB3B3654445B8330E05 /* Foundation.ttf in Resources */,
+				0F363597441D49D8A087AC60 /* Ionicons.ttf in Resources */,
+				73B784A80AE54657A0D8C632 /* MaterialIcons.ttf in Resources */,
+				5E0012F7F7984167A14F746F /* Octicons.ttf in Resources */,
+				50B5F2E477634FDF96424C07 /* Zocial.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39F115428CDB04A31C62D5B3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8D2A797F4667FC5639CECAC8 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSAgentApp/Pods-iOSAgentApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E57672B616CE5ACD1EACF7C8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSAgentApp/Pods-iOSAgentApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F8D5E991B6C0568005E64D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F8D5EA61B6C0568005E64D4 /* AppDelegate.m in Sources */,
+				4F8D5EA31B6C0568005E64D4 /* main.m in Sources */,
+				4F8D5EC81B6C0F94005E64D4 /* InitialViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4F8D5EBE1B6C0568005E64D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4F8D5EBF1B6C0568005E64D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4F8D5EC11B6C0568005E64D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90400F35EE8FD2C6D3B8B7E7 /* Pods-iOSAgentApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = iOSAgentApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "node_modules/react-native-ios-charts/RNiOSCharts/iOSAgentApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4F8D5EC21B6C0568005E64D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 641A79C6255C9F5C2DC614D8 /* Pods-iOSAgentApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = iOSAgentApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "node_modules/react-native-ios-charts/RNiOSCharts/iOSAgentApp-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F8D5E981B6C0568005E64D4 /* Build configuration list for PBXProject "iOSAgentApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F8D5EBE1B6C0568005E64D4 /* Debug */,
+				4F8D5EBF1B6C0568005E64D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F8D5EC01B6C0568005E64D4 /* Build configuration list for PBXNativeTarget "iOSAgentApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F8D5EC11B6C0568005E64D4 /* Debug */,
+				4F8D5EC21B6C0568005E64D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F8D5E951B6C0568005E64D4 /* Project object */;
+}
