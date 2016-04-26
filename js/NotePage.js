@@ -20,6 +20,7 @@ var Note = require('./Note.js');
 var NotePageClass = React.createClass({
 
     componentWillMount: function() {
+      console.log('NOTEPAGE!');
       var that = this;
       var soql = 'SELECT Id,Title,Body FROM Note WHERE ParentId = \''
         +that.props.relatedId+'\'';

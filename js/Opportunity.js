@@ -18,6 +18,7 @@ var Styles = require('./Styles.js');
 var forceClient = require('./react.force.net.js');
 var GiftedSpinner = require('react-native-gifted-spinner');
 var Icon = require('react-native-vector-icons/MaterialIcons');
+var IconFA = require('react-native-vector-icons/FontAwesome');
 
 var NotePage = require('./NotePage.js');
 var CreateNote = require('./CreateNote.js');
@@ -154,6 +155,10 @@ var OpportunityClass = React.createClass({
           return (
             <View>
                 <View style={Styles.row}>
+                  <Image
+                    style={Styles.listViewImageIcon}
+                    source={require('../res/probability.png')}
+                  />
                   <Text numberOfLines={1} style={Styles.textStyle}>
                    {rowData.substring(13)}%
                   </Text>

@@ -267,10 +267,10 @@ var App = React.createClass({
               onPress={this.gotoOppPage}>
               <Text style={Styles.menuText}>Opportunities</Text>
           </Icon.Button>
-          <Icon.Button name="assignment" style={Styles.menuButton} color='#545454'
+          {/*<Icon.Button name="show-chart" style={Styles.menuButton} color='#545454'
               onPress={this.gotoMetricsPage}>
               <Text style={Styles.menuText}>Metrics</Text>
-          </Icon.Button>
+          </Icon.Button>*/}
           <View style={Styles.cellBorder} />
           <Icon.Button name="exit-to-app" style={Styles.menuButton} color='#545454'
               onPress={this.logout}>
@@ -476,7 +476,7 @@ var NavigationBarRouteMapper = {
           openDrawer()
         }}>
         <Icon name='list' size={30}
-          style={Styles.iconLeft}/>
+          style={Styles.iconLeft} />
       </TouchableOpacity>
     );
   },
@@ -495,9 +495,10 @@ var NavigationBarRouteMapper = {
             onPress={() => {
               navigator.pop();
             }}>
-            <Image
-              style={{ height:30, width: 30, marginRight: 8, marginBottom: 5 }}
-              source={{ uri: profileUrl }}
+            <Icon
+              name='account-box' size={30}
+              style={{marginRight: 8, marginBottom: 5 }}
+              color='#17314A'
             />
           </TouchableOpacity>
         );
@@ -520,9 +521,10 @@ var NavigationBarRouteMapper = {
           onPress={() => {
             navigator.push({ id: 'ProfilePage', name: 'Agent Profile' });
           }}>
-          <Image
-            style={{ height:30, width: 30, marginRight: 8, marginBottom: 5 }}
-            source={{ uri: profileUrl }}
+          <Icon
+            name='account-box' size={30}
+            style={{marginRight: 8, marginBottom: 5 }}
+            color='#17314A'
           />
         </TouchableOpacity>
       );

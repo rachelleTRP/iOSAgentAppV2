@@ -55,7 +55,7 @@ var CreateNoteClass = React.createClass({
           </View>
           <View style={{paddingHorizontal: 4}}>
             <TextInput
-              style={{height: 40, borderColor: 'gray', borderWidth: 1, color:'black'}}
+              style={{height: 40, borderColor: 'gray', borderWidth: 1, color:'black', paddingLeft: 4}}
               ref="title"
               autoFocus={true}
               onChangeText={(text) => this.setState({title: text})}
@@ -68,7 +68,7 @@ var CreateNoteClass = React.createClass({
           </View>
           <View style={{paddingHorizontal: 4}}>
             <TextInput
-              style={{height: 40, borderColor: 'gray', borderWidth: 1, color:'black'}}
+              style={{height: 40, borderColor: 'gray', borderWidth: 1, color:'black', paddingLeft: 4}}
               ref="body"
               onChangeText={(text) => this.setState({body: text})}
               value={this.state.body}

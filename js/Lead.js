@@ -69,7 +69,7 @@ var LeadClass = React.createClass({
       );
     }
     return (
-        <View style={Styles.container}>
+        <ScrollView>
             <ListView
                 dataSource={this.state.dataSource}
                 renderRow={this.renderRow} />
@@ -78,7 +78,7 @@ var LeadClass = React.createClass({
                 onPress={() => {
                   this.props.navigator.push({
                     name: 'NotePage',
-                    id: 'Notes',
+                    id: 'NotePage',
                     passProps: { relatedId: this.props.leadId }})
                 }}>
                 <Icon name='note' size={25} style={Styles.listViewIcon}/>
@@ -87,7 +87,7 @@ var LeadClass = React.createClass({
               </TouchableOpacity>
               <View style={Styles.cellBorder} />
             </View>
-        </View>
+        </ScrollView>
       );
     },
 

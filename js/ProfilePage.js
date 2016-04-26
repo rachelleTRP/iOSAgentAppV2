@@ -120,12 +120,8 @@ var ProfilePageClass = React.createClass({
         if (that.state === null) return null;
         return (
           <ScrollView>
-            <View style={Styles.flowTop}>
-                <Image
-                  style={Styles.profilePic}
-                  source={{ uri: that.props.profileUrl }}
-                />
-                <Text style={{marginTop: 8, marginLeft: 8, color: '#545454', fontWeight: '100', fontSize: 24, flex: 2 }}>
+            <View style={Styles.rowLessPad}>
+                <Text style={{marginTop: 8, color: '#545454', fontWeight: '200', fontSize: 24, flex: 2 }}>
                   {that.props.userName}
                 </Text>
             </View>

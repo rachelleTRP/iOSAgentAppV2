@@ -17,6 +17,7 @@ var Styles = require('./Styles.js');
 var oauth = require('./react.force.oauth');
 var forceClient = require('./react.force.net.js');
 var GiftedSpinner = require('react-native-gifted-spinner');
+var Icon = require('react-native-vector-icons/MaterialIcons');
 
 var Task = require('./Task.js');
 
@@ -93,6 +94,7 @@ var TaskPageClass = React.createClass({
                    {rowData['Subject']}
                   </Text>
                 </ScrollView>
+                <Icon name='keyboard-arrow-right' size={25} color='#cc0000' />
               </TouchableOpacity>
               <View style={Styles.cellBorder} />
           </View>

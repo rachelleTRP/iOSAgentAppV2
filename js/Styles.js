@@ -239,12 +239,12 @@ var Styles = StyleSheet.create({
     logo: {
         flex: 1,
         //height: HEIGHT,
-        width: width/4,
+        width: width/4.7,
         //marginLeft: 42/360 * WIDTH,
         //marginLeft: WIDTH/3 - 145/2,
         resizeMode: 'contain',
         justifyContent: 'center',
-        //alignSelf: 'center',
+        alignSelf: 'flex-start',
     },
     textStyle: {
         color: '#545454',
@@ -262,7 +262,12 @@ var Styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: 'white',
-        elevation: 1
+        //elevation: 1,
+        //borderBottomWidth: 1 / PixelRatio.get(),
+        shadowColor: '#d9d9d9',
+        shadowOffset: {width: 0, height: 0.1},
+        shadowOpacity: 400,
+        shadowRadius: 2
     },
     navBarText: {
         fontSize: 18,
@@ -280,13 +285,13 @@ var Styles = StyleSheet.create({
     },
     navBarTitle: {
         //marginLeft: 42/360 * WIDTH,
-        color: '#545454',
+        color: '#17314A',
         fontSize: 16,
         //textAlign: 'left'
     },
     navBarTitleLarge: {
         //marginLeft: 42/360 * WIDTH,
-        color: '#545454',
+        color: '#17314A',
         fontSize: 12,
         //textAlign: 'left'
     },
@@ -380,7 +385,7 @@ var Styles = StyleSheet.create({
         right: 16,
     },
     iconLeft: {
-        color: '#545454',
+        color: '#17314A',
         marginLeft: 8,
         marginBottom: 5
     },
@@ -395,19 +400,13 @@ var Styles = StyleSheet.create({
         flex: 1
     },
     listViewIcon: {
+        color: '#BCBCBC',
         marginRight: 15
     },
     listViewImageIcon: {
         marginRight: 15,
         width: 25,
         height: 25
-    },
-    profilePic: {
-        height: 100,
-        width: 50,
-        marginTop: 8,
-        marginLeft: 8,
-        flex: 1
     },
     noteTitle: {
         fontSize: 16,

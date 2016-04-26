@@ -139,6 +139,7 @@ var TaskList = React.createClass({
               Overdue Tasks
             </Text>
           </View>
+          <View style={Styles.cellBorder} />
           <ListView style={{flex: 1}}
               dataSource={that.state.overdueSummary}
               renderRow={this.renderRow} />
@@ -147,6 +148,7 @@ var TaskList = React.createClass({
               Due Today
             </Text>
           </View>
+          <View style={Styles.cellBorder} />
           <ListView style={{flex: 1}}
               dataSource={that.state.todaySummary}
               renderRow={this.renderRow} />
